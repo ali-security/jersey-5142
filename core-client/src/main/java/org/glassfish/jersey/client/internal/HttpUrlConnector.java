@@ -317,6 +317,10 @@ public class HttpUrlConnector implements Connector {
     private ClientResponse _apply(final ClientRequest request) throws IOException {
         final HttpURLConnection uc;
 
+        if (!DEFAULT_SSL_SOCKET_FACTORY.isInitialized() && "HTTPS".equalsIgnoreCase(request.getUri().getScheme())) {
+            DEFAULT_SSL_SOCKET_FACTORY.get();
+        }
+
         uc = this.connectionFactory.getConnection(request.getUri().toURL());
         uc.setDoInput(true);
 

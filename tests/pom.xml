@@ -44,6 +44,7 @@
         <module>e2e-inject</module>
         <module>e2e-server</module>
         <module>e2e-testng</module>
+        <module>e2e-tls</module>
         <module>integration</module>
         <module>jmockit</module>
         <module>mem-leaks</module>
